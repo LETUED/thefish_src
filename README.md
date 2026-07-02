@@ -19,15 +19,18 @@
 
 ## 실행
 
+`requirements.txt`는 2023년 개발 당시(Python 3.11) 고정 버전이라 Python 3.13에서는 설치가 실패한다. 3.13에서는 최신 CPU 빌드로 설치한다:
+
 ```bash
-pip install -r requirements.txt
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+pip install PyQt5 pillow
 cd test
 python ptqttest1.py
 ```
 
 ![데모](docs/demo.png)
 
-2026-07 기준 Python 3.13 + 최신 torch(CPU)/PyQt5 조합으로 동작 확인. 이미지 업로드 → ResNet50 분류 → SQLite 백과사전 정보 표시까지 전체 플로우 정상.
+2026-07 기준 Python 3.13 + torch 2.x(CPU)/PyQt5로 동작 확인 — 이미지 업로드 → ResNet50 분류 → SQLite 백과사전 표시까지 전체 플로우 정상. (torch를 PyQt5보다 먼저 import해야 DLL 충돌이 없다.)
 
 ## 히스토리
 
