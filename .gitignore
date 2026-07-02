@@ -1,2 +1,7 @@
 /test/build/
 /test/dist/
+__pycache__/
+
+# 로컬 보관 전용 — 커밋 금지
+/data/
+/archive/
