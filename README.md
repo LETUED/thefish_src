@@ -25,6 +25,10 @@ cd test
 python ptqttest1.py
 ```
 
+![데모](docs/demo.png)
+
+2026-07 기준 Python 3.13 + 최신 torch(CPU)/PyQt5 조합으로 동작 확인. 이미지 업로드 → ResNet50 분류 → SQLite 백과사전 정보 표시까지 전체 플로우 정상.
+
 ## 히스토리
 
 - 자체 CNN → 클래스 증가 시 정확도 저하 → ResNet50 전이학습으로 전환, 40+ 클래스 분류 달성
