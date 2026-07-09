@@ -1,10 +1,10 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QFileDialog, QFrame, QVBoxLayout
-from PyQt5.QtGui import QPixmap
-from PyQt5.QtCore import Qt
 import torch
 import torchvision.transforms as transforms
 from torchvision.models import resnet50
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QFileDialog, QFrame, QVBoxLayout
+from PyQt5.QtGui import QPixmap
+from PyQt5.QtCore import Qt
 import sqlite3
 from PIL import Image
 import json
