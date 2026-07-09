@@ -13,7 +13,7 @@
 |---|---|
 | `test/ptqttest1.py` | 메인 앱 (PyQt5) — 이미지 분류 + 어종 정보 출력 |
 | `test/FishDicDB.db` | 어종 백과사전 SQLite DB |
-| `models/resnet50_checkpoint.pth` | 학습된 ResNet50 체크포인트 (90MB) |
+| `models/resnet50_checkpoint.pth` | 학습된 ResNet50 체크포인트 (94MB) |
 | `src/학습.py` | ResNet50 전이학습 스크립트 (ImageFolder 기반) |
 | `src/Organizer.py` | 데이터셋 train/val/test 분할 도구 |
 | `app.py`, `Prj.py` | PySide6 GUI 프로토타입 — 별도 실험본, 메인 앱과 미통합 |
@@ -38,11 +38,11 @@ torch를 PyQt5보다 먼저 import해야 DLL 충돌이 없다.
 
 ![데모](docs/demo.png)
 
-2026-07 Python 3.13 + torch 2.x(CPU)에서 동작 확인 — 이미지 업로드 → ResNet50 분류 → SQLite 백과사전 표시까지 전체 플로우 정상.
+전체 플로우(이미지 업로드 → ResNet50 분류 → SQLite 백과사전 표시)는 2026-07 초 복원 검증에서 확인 — 위 데모가 그 캡처다. 2026-07-09 requirements 현행화(torch 2.13/PyQt5 5.15.11) 후에는 앱 기동을 재확인했다.
 
 ## 상태
 
 - 2023 동아리 프로젝트 종료 후 보존 — GUI 프로토타입·데이터셋은 구글드라이브 백업(E드라이브)에서 복원 (2026-07)
 - 2026-07 정비: requirements를 실동작 세트로 현행화, 학습 스크립트 저장 경로 로컬화(Colab 잔재 제거), IDE 설정 추적 해제
 - PySide6 프로토타입(`app.py`)은 분류 추론이 연결되지 않은 UI 실험본 — 통합하지 않고 보존
-- 모델 체크포인트(90MB)는 저장소에 직접 포함 (LFS 미전환 — 히스토리 유지 우선)
+- 모델 체크포인트(94MB)는 저장소에 직접 포함 (LFS 미전환 — 히스토리 유지 우선)
