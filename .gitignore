@@ -6,3 +6,6 @@ __pycache__/
 /data/
 /archive/
 .venv/
+
+# IDE 설정
+.idea/

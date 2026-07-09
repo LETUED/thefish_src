@@ -7,6 +7,7 @@ from torchvision import datasets, transforms, models
 
 # 데이터 경로, 배치 크기, 에폭 수, 모델 이름, 학습률, 스케줄러 설정을 위한 변수 선언
 DATA_DIR = "data"  # 데이터 경로를 상대 경로로 변경
+MODEL_SAVE_DIR = "results/models"  # 모델 저장 경로 (Colab 드라이브 절대경로에서 변경)
 BATCH_SIZE = 32
 NUM_EPOCHS = 25
 MODEL_NAME = "resnet50"
@@ -131,7 +132,8 @@ class ModelTrainer:
 
     def save_model(self):
         # 모델 저장 경로 설정 및 모델 저장
-        model_save_path = os.path.join("/content/drive/MyDrive/thefish/results/models", f"{self.model_name}_checkpoint.pth")
+        os.makedirs(MODEL_SAVE_DIR, exist_ok=True)
+        model_save_path = os.path.join(MODEL_SAVE_DIR, f"{self.model_name}_checkpoint.pth")
         torch.save(self.model.state_dict(), model_save_path)
         print(f"Model saved at {model_save_path}")
 
